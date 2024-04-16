@@ -1,0 +1,123 @@
+
+section {
+    width: 100%; /* Full width */
+    min-height: 100vh; /* Minimum height of the viewport */
+    color: rgb(255, 255, 255);
+    background: url('/assets/images/bg_list.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p{
+    color: black !important;
+  }
+
+  .notice{
+    color: rgb(255, 255, 255) !important;
+  }
+
+.rating-group {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.rating__icon {
+    display: none;
+}
+
+label{
+    margin-bottom: 10px !important;
+}
+
+.comment{
+    color:rgb(179, 179, 179);
+}
+
+.rating__label {
+    text-align: center;
+    border: 1px solid #0d6efd;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.rating__icon:checked + .rating__label {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.rating-container {
+    display: flex !important;
+    justify-content: space-between !important; /* This will distribute items evenly */
+    align-items: center !important; /* This will keep items aligned in the center vertically */
+}
+
+
+.feedback-text {
+    display: none;
+    color: #6da7ff;
+    margin-left: 10px;
+}
+
+#ayuda-1:checked ~ .feedback-text[data-feedback="ayuda-1"],
+#ayuda-2:checked ~ .feedback-text[data-feedback="ayuda-2"],
+#ayuda-3:checked ~ .feedback-text[data-feedback="ayuda-3"],
+#ayuda-4:checked ~ .feedback-text[data-feedback="ayuda-4"],
+#ayuda-5:checked ~ .feedback-text[data-feedback="ayuda-5"] {
+    display: inline-block !important;
+}
+
+#facilidad-1:checked ~ .feedback-text[data-feedback="facilidad-1"],
+#facilidad-2:checked ~ .feedback-text[data-feedback="facilidad-2"],
+#facilidad-3:checked ~ .feedback-text[data-feedback="facilidad-3"],
+#facilidad-4:checked ~ .feedback-text[data-feedback="facilidad-4"],
+#facilidad-5:checked ~ .feedback-text[data-feedback="facilidad-5"] {
+    display: inline-block !important;
+}
+
+#ambiente-1:checked ~ .feedback-text[data-feedback="ambiente-1"],
+#ambiente-2:checked ~ .feedback-text[data-feedback="ambiente-2"],
+#ambiente-3:checked ~ .feedback-text[data-feedback="ambiente-3"],
+#ambiente-4:checked ~ .feedback-text[data-feedback="ambiente-4"],
+#ambiente-5:checked ~ .feedback-text[data-feedback="ambiente-5"] {
+    display: inline-block !important;
+}
+
+
+.tags-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the gap between elements */
+}
+
+.tag {
+    flex: 0 1 auto; /* Allow the elements to shrink and grow as needed */
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s;
+    color:#007bff;
+}
+
+input[type="checkbox"] {
+    display: none; /* Hide the checkbox */
+}
+
+input[type="checkbox"]:checked + .badge {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}

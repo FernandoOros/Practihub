@@ -1,0 +1,61 @@
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Positioned behind the content */
+    background: rgb(4,45,90);
+background: linear-gradient(90deg, rgba(4,45,90,1) 0%, rgba(25,85,150,1) 100%);
+  }
+  
+  section {
+    position: relative; 
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+    overflow: hidden !important; /* In case of scrollbars appearing */
+    color:white;
+  }
+  
+  
+  .container-fluid {
+    position: relative; /* Ensures that the z-index is applied correctly */
+    z-index: 1; /* Higher than the particles-js z-index */
+    /* Rest of your styles... */
+  }
+
+.search-container {
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search-box {
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 25px 0 0 25px;
+    width: 90vw;
+}
+
+.search-button {
+    padding: 15px 20px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.search-button i {
+    margin-right: 8px;
+}

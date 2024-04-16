@@ -1,0 +1,33 @@
+<section>
+    <div class="container-fluid pt-5">
+        <div class="container pt-5">
+            <div class="mx-auto text-center mb-5 mt-5" style="max-width: 900px;">
+                <h1 class="mb-4">Búsqueda de organización</h1>
+            </div>
+            <div class="mx-auto text-left mb-3" style="max-width: 1200px;">
+                <p class="mb-1">Resultados de búsqueda para {{ searchResult }}.</p>
+            </div>
+        </div>
+    </div>
+            <!-- Services Start -->
+            <div class="container-fluid service" style="max-width: 1200px;">
+                <div class="container">
+                    <div class="row g-4">
+                        <div *ngFor="let organization of matchedOrganizations" (click)="navigateToOrganizationOpinions(organization.organizationId)" class="text-decoration-none">
+                            <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0" style="cursor: pointer;">
+                                <div class="service-icon p-4">
+                                    <i class="fa fa-hotel fa-4x text-primary"></i>
+                                </div>
+                                <div class="service-content">
+                                    <h5 class="mb-4">{{ organization.organizationName }}</h5>
+                                    <p class="mb-0">{{ organization.organizationDescription }}</p>
+                                    <p class="mb-0">{{ organization.organizationAddress }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+</section>
+<ngx-spinner bdColor = "rgb(19,53,123)" size = "large" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Cargando... </p></ngx-spinner>
+

@@ -1,0 +1,300 @@
+
+section {
+  width: 100%; /* Full width */
+  min-height: 100vh; /* Minimum height of the viewport */
+  color: white;
+  background: url('/assets/images/bg_list.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating-block {
+    background: transparent;
+    border: none;
+    text-align: center;
+  }
+  .rating-number {
+    font-size: 5rem;
+    font-weight: bold;
+  }
+  .tags-section {
+    width: 100% !important;
+    background: transparent;
+    padding: 20px;
+  }
+  .badge {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: white;
+    padding: 10px;
+    background-color: #13357b;
+  }
+  .tag-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+
+  /*-----------------*/
+  .container-company{
+    width: 1350px !important;
+    padding: 0 !important;
+    margin-right: auto;
+    margin-left: auto;
+    
+  }
+  
+  @media screen and (min-width: 992px) and (max-width: 1439px) {
+    .container-company {
+      max-width: 1279px !important;
+      padding: 0 !important;
+      margin: 0 80px !important;
+      width: auto !important;
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    .container-company{
+      max-width: 959px !important;
+      margin: 0 16px !important;
+      padding: 0 !important;
+      width: auto !important;
+    }
+  }
+  
+  .gradient-cards {
+    gap: 32px;
+    padding: 30px;
+  }
+  
+  @media screen and (max-width: 991px) {
+    .gradient-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .container-title {
+    text-align: center;
+    padding: 0 !important;
+    margin-bottom: 40px;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 60px;
+  }
+  
+  .card-company {
+    border: 0;
+    width: 100%;
+    margin-inline: auto;
+  }
+  
+  .container-card {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(71deg, #1a186d, #1c185e, #080509);
+    background-clip: padding-box;
+    border-radius: 12px;
+    padding: 5px;
+    background-image: url("/assets/images/bg_opinion.svg");
+  }
+  
+  /*Opinion card*/
+  
+  .card-title {
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    letter-spacing: -0.02em;
+    line-height: 40px;
+    font-style: normal;
+    font-size: 28px;
+    padding-bottom: 8px;
+  }
+  
+  .card-description {
+    font-weight: 600;
+    line-height: 32px;
+    color: hsla(0, 0%, 100%, 0.5);
+    font-size: 16px;
+    max-width: 470px;
+  }
+
+ /*Lines*/
+  .lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
+    width: 90vw;
+  }
+  
+  .line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+  
+  .line::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    animation: drop 7s 0s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  }
+  
+  .line:nth-child(1) {
+    margin-left: -25%;
+  }
+  
+  .line:nth-child(1)::after {
+    animation-delay: 2s;
+  }
+  
+  .line:nth-child(3) {
+    margin-left: 25%;
+  }
+  
+  .line:nth-child(3)::after {
+    animation-delay: 2.5s;
+  }
+  
+  @keyframes drop {
+    0% {
+      top: -50%;
+    }
+    100% {
+      top: 110%;
+    }
+  }
+
+
+  .container{
+    max-width: 1300px !important;
+  }
+
+
+
+  /*Card try*/
+
+  .card {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-bottom: 2rem;
+   
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background: url('/assets/images/bg_opinion.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    padding: 1.5rem;
+    border-radius: none !important;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #fff
+  }
+  
+  .price {
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 700;
+    color: #fff
+  }
+  
+  .desc {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.625;
+    color: rgba(156, 163, 175, 1);
+  }
+  
+  .lists {
+    margin-bottom: 1.5rem;
+    flex: 1 1 0%;
+    color: rgba(156, 163, 175, 1);
+  }
+  
+  .lists .list {
+    margin-bottom: 0.5rem;
+    display: flex;
+    margin-left: 0.5rem
+  }
+  
+  .lists .list svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+    color: rgb(255, 255, 255);
+  }
+  
+  .action {
+    border: none;
+    outline: none;
+    display: inline-block;
+    border-radius: 0.25rem;
+    background-color: rgb(255, 255, 255);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: rgba(17, 24, 39, 1);
+  }
+
+
+
+/*Emoji*/
+.emoji {
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center horizontally, change this to 'flex-end' if you want it to be right aligned */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Full height of the parent container */
+}
+
+.emoji img {
+  width: 150px; /* Larger emoji size */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't overflow the parent container */
+}
+
+
+.col-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This will center the content vertically */
+}
+  

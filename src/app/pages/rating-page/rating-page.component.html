@@ -1,0 +1,165 @@
+<section>
+        <!-- Contact Start -->
+        <div *ngIf="organizationInfo" class="container py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5 mt-4" style="max-width: 500px;">
+                    <h1 class="mb-0">Califica a esta organización</h1>
+                </div>
+                <div *ngIf = "organizationInfo" class="row g-5">
+                    <div class="col-lg-4">
+                        <div class="bg-white rounded p-4">
+                            <div class="text-center mb-4">
+                                <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
+                                <h4 class="text-primary">Organización</h4>
+                                <p class="mb-0">{{organizationInfo.organizationName}}</p>
+                            </div>
+                            <div class="text-center mb-4">
+                                <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
+                                <h4 class="text-primary">Descripción</h4>
+                                <p class="mb-0">{{organizationInfo.organizationDescription}}</p>
+                            </div>
+                            
+                            <div class="text-center">
+                                <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
+                                <h4 class="text-primary">Dirección</h4>
+                                <p class="mb-0">{{organizationInfo.organizationAddress}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <h3 class="mb-2">Confidencialidad</h3>
+                        <form [formGroup]="opinionForm">
+                        <p class="notice mb-4">Todas tus respuetas son completamente anónimas, siente libre de expresarte. Recuerda que la calidad de tus comentarios nos ayuda a todos.</p>
+                            <div class="row mt-2">
+                                <div class="col-md-6">
+                                    <label for="preparationType" class="form-label fw-bold">Tipo de preparación</label>
+                                    <select class="form-select border-0 custom-select" id="preparationType" formControlName="preparationType">
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="Servicio Social">Servicio Social</option>
+                                        <option value="Prácticas en la profesión">Prácticas en la profesión</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-bold d-block">Facilidad</label>
+                                    <div class="rating-container">
+                                        <div class="rating-group d-flex flex-row justify-content-left">
+                                          
+                                            <input type="radio" name="easeActivities" id="facilidad-1" formControlName="easeActivities" class="rating__icon" value="1">
+                                            <label for="facilidad-1" class="rating__label btn btn-outline-primary" title="Nada de facilidad">1</label>
+                            
+                                            <input type="radio" name="easeActivities" id="facilidad-2" formControlName="easeActivities" class="rating__icon" value="2">
+                                            <label for="facilidad-2" class="rating__label btn btn-outline-primary" title="Poca facilidad">2</label>
+                            
+                                            <input type="radio" name="easeActivities" id="facilidad-3" formControlName="easeActivities" class="rating__icon" value="3">
+                                            <label for="facilidad-3" class="rating__label btn btn-outline-primary" title="Facilidad normal">3</label>
+                            
+                                            <input type="radio" name="easeActivities" id="facilidad-4" formControlName="easeActivities" class="rating__icon" value="4">
+                                            <label for="facilidad-4" class="rating__label btn btn-outline-primary" title="Bastante facilidad">4</label>
+                            
+                                            <input type="radio" name="easeActivities" id="facilidad-5" formControlName="easeActivities" class="rating__icon" value="5">
+                                            <label for="facilidad-5" class="rating__label btn btn-outline-primary" title="Mucha facilidad">5</label>
+
+                                            <span class="feedback-text" data-feedback="facilidad-1">Nada de facilidad</span>
+                                            <span class="feedback-text" data-feedback="facilidad-2">Poca facilidad</span>
+                                            <span class="feedback-text" data-feedback="facilidad-3">Facilidad Normal</span>
+                                            <span class="feedback-text" data-feedback="facilidad-4">Bastante facilidad</span>
+                                            <span class="feedback-text" data-feedback="facilidad-5">Mucha facilidad</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-bold d-block">Ambiente</label>
+                                    <div class="rating-container">
+                                        <div class="rating-group d-flex flex-row justify-content-left">
+                                          
+                                            <input type="radio" name="environment" id="ambiente-1" formControlName="environment" class="rating__icon" value="1">
+                                            <label for="ambiente-1" class="rating__label btn btn-outline-primary" title="Nada de ambiente">1</label>
+                            
+                                            <input type="radio" name="environment" id="ambiente-2" formControlName="environment" class="rating__icon" value="2">
+                                            <label for="ambiente-2" class="rating__label btn btn-outline-primary" title="Poca ambiente">2</label>
+                            
+                                            <input type="radio" name="environment" id="ambiente-3" formControlName="environment" class="rating__icon" value="3">
+                                            <label for="ambiente-3" class="rating__label btn btn-outline-primary" title="Ambiente normal">3</label>
+                            
+                                            <input type="radio" name="environment" id="ambiente-4" formControlName="environment" class="rating__icon" value="4">
+                                            <label for="ambiente-4" class="rating__label btn btn-outline-primary" title="Bastante ambiente">4</label>
+                            
+                                            <input type="radio" name="environment" id="ambiente-5" formControlName="environment" class="rating__icon" value="5">
+                                            <label for="ambiente-5" class="rating__label btn btn-outline-primary" title="Mucha ambiente">5</label>
+
+                                            <span class="feedback-text" data-feedback="ambiente-1">Nada de ambiente</span>
+                                            <span class="feedback-text" data-feedback="ambiente-2">Poco ambiente</span>
+                                            <span class="feedback-text" data-feedback="ambiente-3">Ambiente Normal</span>
+                                            <span class="feedback-text" data-feedback="ambiente-4">Bastante ambiente</span>
+                                            <span class="feedback-text" data-feedback="ambiente-5">Mucho ambiente</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-6 mb-3">
+                                    <label class="fw-bold d-block">Ayuda</label>
+                                    <div class="rating-container">
+                                        <div class="rating-group d-flex flex-row justify-content-left">
+                                      
+                                            <input type="radio" name="help" id="ayuda-1" formControlName="help" class="rating__icon" value="1">
+                                            <label for="ayuda-1" class="rating__label btn btn-outline-primary" title="Nada de ayuda">1</label>
+                            
+                                            <input type="radio" name="help" id="ayuda-2" formControlName="help" class="rating__icon" value="2">
+                                            <label for="ayuda-2" class="rating__label btn btn-outline-primary" title="Poca ayuda">2</label>
+                            
+                                            <input type="radio" name="help" id="ayuda-3" formControlName="help" class="rating__icon" value="3">
+                                            <label for="ayuda-3" class="rating__label btn btn-outline-primary" title="Ayuda normal">3</label>
+                            
+                                            <input type="radio" name="help" id="ayuda-4" formControlName="help" class="rating__icon" value="4">
+                                            <label for="ayuda-4" class="rating__label btn btn-outline-primary" title="Bastante ayuda">4</label>
+                            
+                                            <input type="radio" name="help" id="ayuda-5" formControlName="help" class="rating__icon" value="5">
+                                            <label for="ayuda-5" class="rating__label btn btn-outline-primary" title="Mucha ayuda">5</label>
+
+                                            <span class="feedback-text" data-feedback="ayuda-1">Nada de ayuda</span>
+                                            <span class="feedback-text" data-feedback="ayuda-2">Poca ayuda</span>
+                                            <span class="feedback-text" data-feedback="ayuda-3">Ayuda normal</span>
+                                            <span class="feedback-text" data-feedback="ayuda-4">Bastante ayuda</span>
+                                            <span class="feedback-text" data-feedback="ayuda-5">Mucha ayuda</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="services" class="row mt-2">
+                                <div class="col-md-12">
+                                    <label class="fw-bold d-block">Selecciona máximo tres de los servicios ofrecidos en la organización.</label>
+                                    <div class="tags-section" formArrayName="services">
+                                      <div *ngFor="let service of services; let i = index">
+                                        <input type="checkbox" [id]="'service-' + i" (change)="onServiceChange($event, service.serviceName)">
+                                        <label for="service-{{i}}" class="badge">{{service.serviceName}}</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control border-0" placeholder="Escribe tu comentario" id="message" formControlName="comment" style="height: 160px"></textarea>
+                                        <label class="comment" for="message">Comentario</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-0">
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit" (click)="onSubmit()" [disabled]="opinionForm.invalid">Enviar opinión</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>                       
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+</section>
+<ngx-spinner bdColor = "rgb(19,53,123)" size = "large" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Cargando... </p></ngx-spinner>

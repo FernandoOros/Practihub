@@ -1,0 +1,114 @@
+<section> 
+  <div class="lines">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div> 
+    <div *ngIf="organizationDetail && organizationDetail.organizationInfo" class="container-fluid mt-5">
+    <div class="container-company mt-5">
+      <div class="gradient-cards">
+        <div class="card-company bg-blue-box">
+          <div class="container-card">
+            <div class="container-fluid">
+              <div class="container">
+                <div class="text-left mb-5 mt-5">
+                  <h1>{{ organizationDetail.organizationInfo.organizationName }}</h1>
+                  <p>
+                    {{ organizationDetail.organizationInfo.organizationDescription }}<br>
+                    {{ organizationDetail.organizationInfo.organizationAddress }}
+                  </p>
+                  <button class="btn btn-primary" (click)="navigateToRate()">Califica esta organización</button>
+                </div>
+        
+                <div class="container-fluid text-center mt-4">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="rating-block">
+                        <h4>FACILIDAD</h4>
+                        <div class="rating-number">{{ organizationDetail.averageEaseActivities }}</div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="rating-block">
+                        <h4>AMBIENTE</h4>
+                        <div class="rating-number">{{ organizationDetail.averageEnvironment }}</div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="rating-block">
+                        <h4>AYUDA</h4>
+                        <div class="rating-number">{{ organizationDetail.averageHelp }}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="tags-section">
+                        <span *ngFor="let service of organizationServices" class="badge badge-secondary">{{ service.serviceName }}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="container  mt-4 mb-3">
+          <div class="row">
+            <!-- Loop through each opinion returned from the API -->
+            <div class="col-md-12 mb-4" *ngFor="let opinion of opinions">
+              <div class="card">
+                <div class="header">
+                    <span class="title">{{opinion.submitIn | date:'dd-MM-yy' }}</span>
+                    <span class="price">{{opinion.preparationType}}</span>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <p class="desc">{{ opinion.comment }}</p>
+                    <ul class="lists">
+                      <li class="list">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>facilidad: {{ opinion.easeActivities }} </span>
+                      </li>
+                      <li class="list">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Ambiente: {{ opinion.environment }} </span>
+                      </li>
+                      <li class="list">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Ayuda: {{ opinion.help }}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-6">
+                    <div class="emoji">
+                      <img [src]="opinion.imageToShow" alt="Emoji representing the average rating">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="tags-section">
+                      <span *ngFor="let service of opinion.services" class="badge badge-secondary">{{ service }}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col12">
+                  <button class="btn btn-danger report-btn" (click)="reportOpinion(opinion.opinionId)">
+                    Reportar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+<ngx-spinner bdColor = "rgb(19,53,123)" size = "large" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Cargando... </p></ngx-spinner>
